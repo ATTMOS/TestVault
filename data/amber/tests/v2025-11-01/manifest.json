@@ -1,0 +1,29 @@
+{
+  "version": "v2025-11-01",
+  "created_at": "2025-11-01T00:00:00Z",
+  "dataset": "amber/tests",
+  "files": [
+    {
+      "name": "test.tar.gz.gpg",
+      "type": "encrypted_archive",
+      "encryption": {
+        "algorithm": "GPG",
+        "cipher": "AES256",
+        "mode": "symmetric"
+      },
+      "original_file": "test.tar.gz",
+      "sha256": "90276dad7773ae36a736611283b3ffef55741c1f0c1c69ac20d12fa003f1932f",
+      "sha256_file": "test.tar.gz.gpg.sha256"
+    }
+  ],
+  "decryption": {
+    "command": "./scripts/decrypt.sh test.tar.gz.gpg --password-file /run/secrets/gpg_password --verify-hash",
+    "password_location": "/run/secrets/gpg_password",
+    "note": "Use Docker secrets or Kubernetes secrets to mount the password file"
+  },
+  "metadata": {
+    "project": "TestVault",
+    "repository": "ATTMOS/TestVault",
+    "branch": "main"
+  }
+}
